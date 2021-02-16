@@ -1,0 +1,17 @@
+{
+  "item.elementalchaos.copper": "Copper",
+  "item.elementalchaos.mywand": "Wand of destruction",
+  "item.elementalchaos.compressedstar": "Compressed star",
+  "item.elementalchaos.netherstarsword": "Nether star sword",
+  "item.elementalchaos.brokenobsidian": "Broken obsidian",
+  "item.elementalchaos.obsidianingot": "Obsidian ingot",
+  "item.elementalchaos.obsidiansword": "Obsidian sword",
+  "block.elementalchaos.copper_ore": "Copper ore",
+  "block.elementalchaos.chaos_ore": "Chaos ore",
+  "block.elementalchaos.order_ore": "Order ore",
+  "block.elementalchaos.wind_ore": "Wind ore",
+  "block.elementalchaos.ice_ore": "Ice ore",
+  "block.elementalchaos.fire_ore": "Fire ore",
+  "item.elementalchaos.chaos_nugget": "Chaos nugget",
+  "item.elementalchaos.firestaff": "Fire staff"
+}

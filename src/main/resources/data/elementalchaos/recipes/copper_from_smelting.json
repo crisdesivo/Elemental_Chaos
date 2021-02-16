@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "elementalchaos:copper_ore"
+  },
+  "result": "elementalchaos:copper",
+  "experience": 0.7,
+  "cookingtime": 200
+}
