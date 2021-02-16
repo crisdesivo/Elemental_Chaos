@@ -2,6 +2,7 @@ package com.example.elementalchaos.elementalItems.recipes;
 
 
 import com.example.elementalchaos.ModItemTier;
+import com.example.elementalchaos.RegistryHandler;
 import com.example.elementalchaos.elementalItems.items.HasteSpell;
 import com.google.gson.JsonObject;
 import net.minecraft.inventory.CraftingInventory;
@@ -37,7 +38,6 @@ public class RechargeRecipe extends SpecialRecipe {
         return new HasteSpell(ModItemTier.FIRE_STAFF, (new Item.Properties()).group(ItemGroup.COMBAT)).getDefaultInstance();
     }
 
-
     @Override
     public NonNullList<ItemStack> getRemainingItems(CraftingInventory inv) {
         return NonNullList.withSize(inv.getSizeInventory(), ItemStack.EMPTY);
@@ -55,7 +55,7 @@ public class RechargeRecipe extends SpecialRecipe {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        return ModRecipes.RECHARGE.get();
+        return RegistryHandler.RECHARGE.get();
     }
 
     public static final class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<RechargeRecipe> {

@@ -2,12 +2,15 @@ package com.example.elementalchaos;
 
 
 import com.example.elementalchaos.elementalItems.items.HasteSpell;
+import com.example.elementalchaos.elementalItems.recipes.RechargeRecipe;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.SpecialRecipeSerializer;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -16,13 +19,21 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 
+import java.util.function.Supplier;
+
 
 public class RegistryHandler {
     // create DeferredRegister object
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ElementalChaos.MODID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ElementalChaos.MODID);
     public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, ElementalChaos.MODID);
+    public static final RegistryObject<IRecipeSerializer<?>> RECHARGE = register(new ResourceLocation("elementalchaos:recharge"), () -> new SpecialRecipeSerializer<>(RechargeRecipe::new));
 
+
+    private static RegistryObject<IRecipeSerializer<?>> register(ResourceLocation id, Supplier<IRecipeSerializer<?>> serializer) {
+
+        return RegistryHandler.RECIPE_SERIALIZERS.register(id.getPath(), serializer);
+    }
 
     public static void init() {
         // attach DeferredRegister to the event bus
